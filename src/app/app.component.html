@@ -1,0 +1,16 @@
+<div class="toolbar" role="banner">
+  <span>Transform an adress to coordinates</span>
+  <div class="spacer"></div>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/messages">Adresses</a>
+</div>
+
+<div class="content" role="main">
+  <h1>{{ title }}</h1>
+  <app-dashboard></app-dashboard>
+  <app-search-adress></app-search-adress>
+  <app-favorite-adresses></app-favorite-adresses>
+
+  <app-messages></app-messages>
+</div>
+<router-outlet></router-outlet>
