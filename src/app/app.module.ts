@@ -10,6 +10,7 @@ import { AdressDetailComponent } from './adress-detail/adress-detail.component';
 import { SearchAdressComponent } from './search-adress/search-adress.component';
 import { FavoriteAdressesComponent } from './favorite-adresses/favorite-adresses.component';
 import { MessagesComponent } from './messages/messages.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { MessagesComponent } from './messages/messages.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

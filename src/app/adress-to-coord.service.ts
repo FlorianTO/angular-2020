@@ -19,9 +19,9 @@ export class AdressToCoordService {
   getCoordsFromAdress(adress: Adresse): Observable<Adresse[]>
   {
     let params = new HttpParams();
-    params = params.set( "q", adress.number + "+" + adress.type + "+" + adress.name + "+" + adress.city );
+    params = params.set( "q", adress.number + "+" + adress.name.replace(/\s/g, '+') + "+" + adress.city );
     params = params.set( "limit", LIMIT.toString() );
-    params = params.set( "type", adress.type.name );
+    params = params.set( "type", adress.type );
     params = params.set( "postcode", adress.postalCode.toString() );
     return this.http.get<Adresse[]>( URL, { params: params } );
 

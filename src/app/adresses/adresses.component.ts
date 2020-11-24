@@ -11,19 +11,34 @@ import { Observable } from 'rxjs';
 })
 export class AdressesComponent implements OnInit {
 
-  @Input()
-  adress: Adresse;
+  @Input() showMePartially: boolean;
+
+  @Input() id: number;
+  @Input() name: string;
+  @Input() type: string ;
+  @Input() number: number;
+  @Input() postalCode: number;
+  @Input() coordY: string;
+  @Input() coordX: string;
+  @Input() city: string;
+
   adresses: Adresse[];
   selectedAdress: Adresse;
   constructor(private heroService: AdressToCoordService, private messageService: MessageService) { }
 
-  ngOnInit(): void {
-    this.heroService.getCoordsFromAdress(this.adress).subscribe(adr => this.adresses = adr);
-  }
+  ngOnInit(): void { }
 
   onSelect(adr: Adresse): void {
     this.messageService.add(`AdressesComponent: Selected adress id=${adr.id}`);
     this.selectedAdress = adr;
   }
+
+  ngOnChanges(): void {
+    this.heroService.getCoordsFromAdress({ city : this.city, name : this.name, id : this.id, coordX : this.coordX, coordY : this.coordY, postalCode: this.postalCode, number: this.number, type : this.type }).subscribe(adr => {
+      console.log(adr);
+      this.adresses = adr;
+    });
+  }
+
 
 }
