@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AdressToCoordService } from 'app/adress-to-coord.service';
-import { Adresse } from 'app/models/interfaces';
 
 @Component({
   selector: 'app-search-adress',
@@ -11,14 +10,14 @@ import { Adresse } from 'app/models/interfaces';
 export class SearchAdressComponent implements OnInit {
 
   showVar: boolean = true;
-  id: number = null;
-  name: string = null;
-  type: string = null;
-  number: number = null;
-  postalCode: number = null;
-  coordY: string = null;
-  coordX: string = null;
-  city: string = null;
+  id: number = 0;
+  name: string = '';
+  type: string = '';
+  number: number = 0;
+  postalCode: number = 0;
+  coordY: string = '';
+  coordX: string = '';
+  city: string = '';
 
   types;
   checkoutForm;
@@ -34,15 +33,15 @@ export class SearchAdressComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.types = {
-      0: {
-        name: "rue",
-        value: "street"
-      }, 1: {
-        name: "boulevard",
-        value: "bd"
-      }
-    };
+    // this.types = {
+    //   0: {
+    //     name: "rue",
+    //     value: "street"
+    //   }, 1: {
+    //     name: "boulevard",
+    //     value: "bd"
+    //   }
+    // };
     /*this.heroService.getCoordsFromAdress( { city : "a", name : "b", id : 1, coordX : "a", coordY : "b", postalCode:33600, number: 3, type : "street" }).subscribe(adr => {
       console.log(adr);
       this.adresses = adr;

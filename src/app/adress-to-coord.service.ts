@@ -7,7 +7,7 @@ import { Adresse } from './models/interfaces';
 import { MessageService } from './message.service';
 
 const URL: string = "https://api-adresse.data.gouv.fr/search/?";
-const LIMIT: number = 15;
+const LIMIT: number = 1;
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,12 @@ export class AdressToCoordService {
   getCoordsFromAdress(adress: Adresse): Observable<Adresse[]>
   {
     let params = new HttpParams();
-    params = params.set( "q", adress.number + "+" + adress.name.replace(/\s/g, '+') + "+" + adress.city );
-    params = params.set( "limit", LIMIT.toString() );
+    params = params.set( "q", adress.number + "+" + adress.type + "+" + adress.name.replace(/\s/g, '+') + "+" + adress.city );
+    params = params.set( "limit", LIMIT);
     params = params.set( "type", adress.type );
-    params = params.set( "postcode", adress.postalCode.toString() );
+    params = params.set( "postcode", adress.postalCode);
+    console.log(URL, { params: params });
+    //console.log(this.http.get<Adresse[]>( URL, { params: params } ));
     return this.http.get<Adresse[]>( URL, { params: params } );
 
 

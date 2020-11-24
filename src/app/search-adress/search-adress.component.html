@@ -1,23 +1,23 @@
-<form (submit)="onSubmit()">
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
     <label for="id">Id</label>
-    <input formcontrolname="id" id="id" />
+    <input formControlName="id" id="id" />
 
     <label for="number">Number</label>
-    <input formcontrolname="number" id="number" />
+    <input formControlName="number" id="number" />
 
     <label for="type">type</label>
-    <input formcontrolname="type" id="type" />
+    <input formControlName="type" id="type" />
 
     <label for="name">name</label>
-    <input formcontrolname="name" id="name" />
+    <input formControlName="name" id="name" />
 
     <label for="postalCode">postalCode</label>
-    <input formcontrolname="postalCode" id="postalCode" />
+    <input formControlName="postalCode" id="postalCode" />
 
     <label for="city">city</label>
-    <input formcontrolname="city" id="city" />
+    <input formControlName="city" id="city" />
 
-    <button type="submit" [disabled]="!checkoutForm.valid">Submit</button>
+    <button type="submit">Submit</button>
 </form>
 
 <app-adresses [showMePartially]="showVar" [id]="id" [name]="name" [type]="type" [number]="number" [postalCode]="postalCode" [coordY]="coordY" [coordX]="coordX" [city]="city"></app-adresses>

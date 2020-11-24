@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { AdressToCoordService } from 'app/adress-to-coord.service';
 import { MessageService } from 'app/message.service';
 import { Adresse } from 'app/models/interfaces';
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './adresses.component.html',
   styleUrls: ['./adresses.component.css']
 })
-export class AdressesComponent implements OnInit {
+export class AdressesComponent implements OnChanges {
 
   @Input() showMePartially: boolean;
 
@@ -35,8 +35,9 @@ export class AdressesComponent implements OnInit {
 
   ngOnChanges(): void {
     this.heroService.getCoordsFromAdress({ city : this.city, name : this.name, id : this.id, coordX : this.coordX, coordY : this.coordY, postalCode: this.postalCode, number: this.number, type : this.type }).subscribe(adr => {
-      console.log(adr);
+      //console.log(adr);
       this.adresses = adr;
+      console.log(this.adresses);
     });
   }
 
