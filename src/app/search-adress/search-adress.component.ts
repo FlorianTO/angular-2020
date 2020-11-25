@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { AdressToCoordService } from 'app/adress-to-coord.service';
+//import { Adresse } from 'app/models/interfaces';
 
 @Component({
   selector: 'app-search-adress',
@@ -21,6 +22,7 @@ export class SearchAdressComponent implements OnInit {
 
   types;
   checkoutForm;
+  //adresses: Adresse[];
   constructor(private heroService: AdressToCoordService, private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
       id: '',
