@@ -24,7 +24,6 @@ export class AdressToCoordService {
     params = params.set( "&type=", adress.type );
     params = params.set( "&postcode=", adress.postalCode.toString() );
     console.log(URL, { params: params });
-    //console.log(this.http.get<Adresse[]>( URL, { params: params } ));
     return this.http.get<Adresse[]>( URL, { params: params } );
 
 

@@ -1,4 +1,12 @@
 <p>adresses works!</p>
 <div *ngIf="showMePartially">
-    <h1>showMePartially</h1>
+    <h1>Results from API</h1>
+    <ul>
+        <li *ngFor="let result of results">
+            <ul>
+                <li>Adresse : {{ result.properties.label}}</li>
+                <li>Latitude : {{ result.geometry.coordinates[0] }} | Longitude : {{ result.geometry.coordinates[1] }}</li>
+            </ul>
+        </li>
+    </ul>
 </div>

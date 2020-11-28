@@ -24,6 +24,7 @@ export class AdressesComponent implements OnChanges {
 
   adresses: Adresse[];
   selectedAdress: Adresse;
+  results = [];
   constructor(private heroService: AdressToCoordService, private messageService: MessageService) { }
 
   ngOnInit(): void { }
@@ -35,11 +36,12 @@ export class AdressesComponent implements OnChanges {
 
   ngOnChanges(): void {
     this.heroService.getCoordsFromAdress({ city : this.city, name : this.name, id : this.id, coordX : this.coordX, coordY : this.coordY, postalCode: this.postalCode, number: this.number, type : this.type }).subscribe(adr => {
-      //console.log(adr);
       this.adresses = adr;
       console.log(this.adresses);
+      for( let adresse of this.adresses["features"]) {
+        console.log(adresse);
+        this.results.push(adresse);
+      }
     });
   }
-
-
 }

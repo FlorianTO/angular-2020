@@ -10,7 +10,7 @@ import { AdressToCoordService } from 'app/adress-to-coord.service';
 })
 export class SearchAdressComponent implements OnInit {
 
-  showVar: boolean = true;
+  showVar: boolean = false;
   id: number = 0;
   name: string = '';
   type: string = '';
