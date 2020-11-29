@@ -3,6 +3,6 @@
     <h2>Historique :</h2>
     <button class="clear" (click)="messageService.clear()">clear</button>
     <button class="clear ml-5" (click)="chancheLocale()">Changer de format d'heure</button>
-    <div *ngFor='let message of messageService.messages'> {{ message.heure | switchHeure:locale }}:{{ message.minute }} : {{message.message}} </div>
+    <div *ngFor='let message of messageService.messages'> {{ message.heure | switchHeure:locale }}:{{ message.minute }} {{message.message}} </div>
 
 </div>

@@ -2,8 +2,6 @@
     <ul class="list-group">
         <li *ngFor="let result of results">
             <ul class="list-group p-2">
-                <li class="list-group-item">Adresse : {{ result.properties.label}}</li>
-                <li class="list-group-item">Latitude : {{ result.geometry.coordinates[0] }} | Longitude : {{ result.geometry.coordinates[1] }}</li>
                 <app-adress-detail [adress]="result.properties.label" [long]="result.geometry.coordinates[0]" [lat]="result.geometry.coordinates[1]"></app-adress-detail>
             </ul>
         </li>

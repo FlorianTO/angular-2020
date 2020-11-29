@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-adress-detail',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adress-detail.component.css']
 })
 export class AdressDetailComponent implements OnInit {
+
+  @Input() adress: string;
+  @Input() long: string;
+  @Input() lat: string;
 
   constructor() { }
 

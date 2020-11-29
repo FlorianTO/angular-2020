@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdressesComponent } from './adresses/adresses.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdressDetailComponent } from './adress-detail/adress-detail.component';
 import { SearchAdressComponent } from './search-adress/search-adress.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -17,7 +16,6 @@ import { SwitchHeurePipe } from './switch-heure.pipe';
   declarations: [
     AppComponent,
     AdressesComponent,
-    DashboardComponent,
     AdressDetailComponent,
     SearchAdressComponent,
     MessagesComponent,
