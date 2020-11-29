@@ -2,20 +2,22 @@
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="number">Numéro de rue :</label>
-            <input formControlName="number" placeholder="..." id="number" class="form-control" />
+            <input type="number" formControlName="number" placeholder="..." id="number" class="form-control" />
         </div>
 
         <div class="form-group">
             <label for="type">Type de rue :</label>
             <input formControlName="type" placeholder="Rue, avenue, ..." id="type" class="form-control" />
         </div>
+
+
         <div class="form-group">
             <label for="name">Nom de rue : </label>
             <input formControlName="name" placeholder="Des lilas" id="name" class="form-control" />
         </div>
         <div class="form-group">
             <label for="postalCode">Code Postal :</label>
-            <input formControlName="postalCode" placeholder="75001" id="postalCode" class="form-control" required/>
+            <input type="number" formControlName="postalCode" placeholder="75001" id="postalCode" class="form-control" required/>
         </div>
         <div class="form-group">
             <label for="city">Ville :</label>
