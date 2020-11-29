@@ -8,10 +8,10 @@ import { AdressesComponent } from './adresses/adresses.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdressDetailComponent } from './adress-detail/adress-detail.component';
 import { SearchAdressComponent } from './search-adress/search-adress.component';
-import { FavoriteAdressesComponent } from './favorite-adresses/favorite-adresses.component';
 import { MessagesComponent } from './messages/messages.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SwitchHeurePipe } from './switch-heure.pipe';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     AdressDetailComponent,
     SearchAdressComponent,
-    FavoriteAdressesComponent,
-    MessagesComponent
+    MessagesComponent,
+    SwitchHeurePipe
   ],
   imports: [
     BrowserModule,

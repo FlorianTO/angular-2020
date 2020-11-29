@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { AdressToCoordService } from 'app/adress-to-coord.service';
-//import { Adresse } from 'app/models/interfaces';
+import { MessageService } from 'app/message.service';
 
 @Component({
   selector: 'app-search-adress',
@@ -10,7 +9,6 @@ import { AdressToCoordService } from 'app/adress-to-coord.service';
 })
 export class SearchAdressComponent implements OnInit {
 
-  //showVar: boolean = false;
   name: string = '';
   type: string = '';
   number: number = 0;
@@ -19,9 +17,9 @@ export class SearchAdressComponent implements OnInit {
   coordX: string = '';
   city: string = '';
 
-  types;
   checkoutForm;
-  constructor(private heroService: AdressToCoordService, private formBuilder: FormBuilder) {
+
+  constructor(private formBuilder: FormBuilder, private messages: MessageService) {
     this.checkoutForm = this.formBuilder.group({
       number: '',
       type: '',
@@ -31,11 +29,9 @@ export class SearchAdressComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   onSubmit() {
-    //this.showVar = !this.showVar;
     this.name = this.checkoutForm.value.name;
     this.type = this.checkoutForm.value.type;
     this.number = this.checkoutForm.value.number;
@@ -44,10 +40,8 @@ export class SearchAdressComponent implements OnInit {
     this.coordX = this.checkoutForm.value.coordY;
     this.city = this.checkoutForm.value.city;
 
-    
-
     this.checkoutForm.reset();
 
-    console.warn('Your order has been submitted');
+    this.messages.add("city :" + this.city + " name :" + this.name + " postalCode : " + this.postalCode + " number : " + this.number + " type : " + this.type);
   }
 }

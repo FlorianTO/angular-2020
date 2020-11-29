@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Adresse } from './models/interfaces';
-import { MessageService } from './message.service';
 
 const URL: string = "https://api-adresse.data.gouv.fr/search/?";
 const LIMIT: number = 1;
