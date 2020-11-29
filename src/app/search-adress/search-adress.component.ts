@@ -42,6 +42,6 @@ export class SearchAdressComponent implements OnInit {
 
     this.checkoutForm.reset();
 
-    this.messages.add("city :" + this.city + " name :" + this.name + " postalCode : " + this.postalCode + " number : " + this.number + " type : " + this.type);
+    this.messages.add("=> " + this.number + ' ' + this.type + ' ' + this.name + ' ' + this.postalCode + ' ' + this.city);
   }
 }
