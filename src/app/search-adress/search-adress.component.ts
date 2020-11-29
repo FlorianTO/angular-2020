@@ -10,8 +10,7 @@ import { AdressToCoordService } from 'app/adress-to-coord.service';
 })
 export class SearchAdressComponent implements OnInit {
 
-  showVar: boolean = false;
-  id: number = 0;
+  //  showVar: boolean = true;
   name: string = '';
   type: string = '';
   number: number = 0;
@@ -22,10 +21,8 @@ export class SearchAdressComponent implements OnInit {
 
   types;
   checkoutForm;
-  //adresses: Adresse[];
   constructor(private heroService: AdressToCoordService, private formBuilder: FormBuilder) {
     this.checkoutForm = this.formBuilder.group({
-      id: '',
       number: '',
       type: '',
       name: '',
@@ -35,24 +32,10 @@ export class SearchAdressComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.types = {
-    //   0: {
-    //     name: "rue",
-    //     value: "street"
-    //   }, 1: {
-    //     name: "boulevard",
-    //     value: "bd"
-    //   }
-    // };
-    /*this.heroService.getCoordsFromAdress( { city : "a", name : "b", id : 1, coordX : "a", coordY : "b", postalCode:33600, number: 3, type : "street" }).subscribe(adr => {
-      console.log(adr);
-      this.adresses = adr;
-    });*/
   }
 
   onSubmit() {
-    this.showVar = !this.showVar;
-    this.id = this.checkoutForm.value.id;
+    //this.showVar = !this.showVar;
     this.name = this.checkoutForm.value.name;
     this.type = this.checkoutForm.value.type;
     this.number = this.checkoutForm.value.number;

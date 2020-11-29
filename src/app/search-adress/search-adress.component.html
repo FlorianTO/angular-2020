@@ -1,9 +1,8 @@
+<div>
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <label for="id">Id</label>
-    <input formControlName="id" id="id" />
 
     <label for="number">Number</label>
-    <input formControlName="number" id="number" />
+    <input formControlName="number" id="number"/>
 
     <label for="type">type</label>
     <input formControlName="type" id="type" />
@@ -19,5 +18,6 @@
 
     <button type="submit">Submit</button>
 </form>
+</div>
 
-<app-adresses [showMePartially]="showVar" [id]="id" [name]="name" [type]="type" [number]="number" [postalCode]="postalCode" [coordY]="coordY" [coordX]="coordX" [city]="city"></app-adresses>
+<app-adresses [name]="name" [type]="type" [number]="number" [postalCode]="postalCode" [coordY]="coordY" [coordX]="coordX" [city]="city"></app-adresses>

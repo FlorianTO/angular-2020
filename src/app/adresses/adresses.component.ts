@@ -39,7 +39,6 @@ export class AdressesComponent implements OnChanges {
       this.adresses = adr;
       console.log(this.adresses);
       for( let adresse of this.adresses["features"]) {
-        console.log(adresse);
         this.results.push(adresse);
       }
     });
