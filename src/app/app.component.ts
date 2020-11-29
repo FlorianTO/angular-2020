@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'adresse-to-coordonees';
+  title = 'Transformer une adresse en coordonnées';
 }

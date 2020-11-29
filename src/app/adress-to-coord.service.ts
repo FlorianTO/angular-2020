@@ -14,7 +14,7 @@ const LIMIT: number = 1;
 })
 export class AdressToCoordService {
 
-  constructor(private http: HttpClient, private messageService: MessageService) { }
+  constructor(private http: HttpClient) { }
 
   getCoordsFromAdress(adress: Adresse): Observable<Adresse[]>
   {
@@ -25,17 +25,5 @@ export class AdressToCoordService {
     params = params.set( "&postcode=", adress.postalCode.toString() );
     console.log(URL, { params: params });
     return this.http.get<Adresse[]>( URL, { params: params } );
-
-
-    /*var term: string = "q" + adress.number + "+" + adress.type + "+" + adress.name + "+" + adress.city + "limit=" + LIMIT.toString() + "type=" + adress.type.name + "postcode=" + adress.postalCode.toString();
-    term = term.trim();
-    const adressURL = '${URL}?${term}';
-    this.messageService.add('TypeService: fetched response for : ' + adress);
-    return this.http.jsonp(adressURL, 'callback').pipe(
-      retry(5),
-
-    );*/
-
-
   }
 }

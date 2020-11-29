@@ -1,23 +1,29 @@
-<div>
+
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="number">Numéro de rue :</label>
+        <input formControlName="number" placeholder="..." id="number" class="form-control"/>
+    </div>
 
-    <label for="number">Number</label>
-    <input formControlName="number" id="number"/>
-
-    <label for="type">type</label>
-    <input formControlName="type" id="type" />
-
-    <label for="name">name</label>
-    <input formControlName="name" id="name" />
-
-    <label for="postalCode">postalCode</label>
-    <input formControlName="postalCode" id="postalCode" />
-
-    <label for="city">city</label>
-    <input formControlName="city" id="city" />
-
-    <button type="submit">Submit</button>
+    <div class="form-group">
+        <label for="type">Type de rue :</label>
+        <input formControlName="type" placeholder="Rue, avenue, ..." id="type" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="name">Nom de rue : </label>
+        <input formControlName="name" placeholder="Des lilas" id="name" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label for="postalCode">Code Postal :</label>
+        <input formControlName="postalCode" placeholder="75001" id="postalCode" class="form-control" required/>
+    </div>
+    <div class="form-group">
+        <label for="city">Ville :</label>
+        <input formControlName="city" placeholder="Paris" id="city" class="form-control rounded-right" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
 </form>
-</div>
 
+
+<!-- [showMePartially]="showVar" -->
 <app-adresses [name]="name" [type]="type" [number]="number" [postalCode]="postalCode" [coordY]="coordY" [coordX]="coordX" [city]="city"></app-adresses>
